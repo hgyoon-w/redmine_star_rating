@@ -4,9 +4,9 @@
       <%= label_tag 'settings_enable_issue_rating', l(:label_enable_issue_rating) %>
     </td>
     <td class="value">
-      <%= check_box_tag 'settings[enable_issue_rating]', true, @settings['enable_issue_rating'],
+      <%= hidden_field_tag 'settings[enable_issue_rating]', false %>
+      <%= check_box_tag 'settings[enable_issue_rating]', true, @settings['enable_issue_rating'] == 'true',
           id: 'settings_enable_issue_rating' %>
-      <%= hidden_field_tag 'settings[enable_issue_rating]', false, id: nil %>
     </td>
   </tr>
   <tr>
@@ -14,9 +14,9 @@
       <%= label_tag 'settings_enable_journal_rating', l(:label_enable_journal_rating) %>
     </td>
     <td class="value">
-      <%= check_box_tag 'settings[enable_journal_rating]', true, @settings['enable_journal_rating'],
+      <%= hidden_field_tag 'settings[enable_journal_rating]', false %>
+      <%= check_box_tag 'settings[enable_journal_rating]', true, @settings['enable_journal_rating'] == 'true',
           id: 'settings_enable_journal_rating' %>
-      <%= hidden_field_tag 'settings[enable_journal_rating]', false, id: nil %>
     </td>
   </tr>
   <tr>
@@ -24,9 +24,9 @@
       <%= label_tag 'settings_allow_self_rating', l(:label_allow_self_rating) %>
     </td>
     <td class="value">
-      <%= check_box_tag 'settings[allow_self_rating]', true, @settings['allow_self_rating'],
+      <%= hidden_field_tag 'settings[allow_self_rating]', false %>
+      <%= check_box_tag 'settings[allow_self_rating]', true, @settings['allow_self_rating'] == 'true',
           id: 'settings_allow_self_rating' %>
-      <%= hidden_field_tag 'settings[allow_self_rating]', false, id: nil %>
     </td>
   </tr>
 </table>
