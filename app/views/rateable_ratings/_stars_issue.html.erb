@@ -1,6 +1,8 @@
 <%
   settings = Setting.plugin_redmine_star_rating
   return unless settings['enable_issue_rating']
+  # 프로젝트에서 star_rating 모듈이 활성화되어 있는지 확인
+  return unless @issue.project.module_enabled?(:star_rating)
 %>
 <div class="rateable-rating-container rateable-issue-rating">
   <%= render partial: 'rateable_ratings/stars',

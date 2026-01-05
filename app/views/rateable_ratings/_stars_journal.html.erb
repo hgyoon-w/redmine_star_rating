@@ -4,6 +4,8 @@
   return unless defined?(journal) && journal.present?
   # 이력만 있고 코멘트(notes)가 없는 경우 별점 표시하지 않음
   return unless journal.notes.present?
+  # 프로젝트에서 star_rating 모듈이 활성화되어 있는지 확인
+  return unless journal.issue.project.module_enabled?(:star_rating)
 %>
 <div class="rateable-rating-container rateable-journal-rating">
   <%= render partial: 'rateable_ratings/stars',

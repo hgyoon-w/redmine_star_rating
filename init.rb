@@ -12,10 +12,12 @@ Redmine::Plugin.register :redmine_star_rating do
 
   requires_redmine version_or_higher: '5.0.0'
 
-  # Permission
-  permission :rate_rateables, {
-    rateable_ratings: [:create]
-  }, public: false
+  # Project module - 프로젝트별로 별점 기능 활성화/비활성화 가능
+  project_module :star_rating do
+    permission :rate_rateables, {
+      rateable_ratings: [:create]
+    }, public: false
+  end
 
   # Plugin settings
   settings default: {
